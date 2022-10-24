@@ -22,7 +22,9 @@ class EmployeeController extends Controller
     public function index()
     {
         $employees = User::paginate(5);
-       return view('employees.index', compact('employees'));	
+        $roles = Role::all();
+    
+       return view('employees.index', compact('employees','roles'));		
     }
 
     /**
